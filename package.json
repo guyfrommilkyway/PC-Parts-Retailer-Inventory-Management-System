@@ -1,10 +1,19 @@
 {
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0"
-  },
-  "devDependencies": {
-    "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.6"
-  }
+    "scripts": {
+        "start": "node src/app.js",
+        "dev": "env-cmd -f ./src/config/config.env nodemon src/app.js -e hbs,css"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^5.2.0",
+        "handlebars": "^4.7.6",
+        "handlebars-layouts": "^3.1.4",
+        "mdbootstrap": "^4.19.1",
+        "mongodb": "^3.6.3",
+        "mongoose": "^5.10.14"
+    },
+    "devDependencies": {
+        "env-cmd": "^10.1.0",
+        "nodemon": "^2.0.6"
+    }
 }
