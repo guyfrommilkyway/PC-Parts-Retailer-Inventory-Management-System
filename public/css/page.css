@@ -1,0 +1,39 @@
+/* Admin */
+
+#login .row {
+  align-items: center;
+  height: 100vh;
+  background-color: #333333;
+}
+
+#login form {
+  max-width: 380px;
+  min-width: 320px;
+  min-height: 360px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  color: #ffffff;
+  text-align: center;
+  background-color: #202020;
+  border-radius: 3px;
+}
+
+#login form .links {
+  margin-top: 2rem;
+}
+
+#login form .links p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Client */
+
+#index header {
+  margin-bottom: 2rem;
+}
+
+#index header span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
