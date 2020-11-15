@@ -1,0 +1,41 @@
+{{#extend "layout-client"}}
+
+{{#content "extra_css"}}
+
+{{/content}}
+
+{{#content "content"}}
+<div class="container-fluid" id="index">
+    <div class="row">
+        <div class="col-md-12">
+            <header>
+                <h4>Products Pricelist</h4>
+                <span>PRICES & AVAILABILITY STATUS ARE VALID ONLY UNTIL
+                    11/15/2020
+                    11:43:03 PM</span>
+            </header>
+            <section>
+                <table class="table table-borderless" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>Catergory</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                </table>
+            </section>
+        </div>
+    </div>
+</div>
+{{/content}}
+
+{{#content "extra_js"}}
+<script>
+    $('#productsTable').dataTable();
+</script>
+{{/content}}
+
+{{/extend}}

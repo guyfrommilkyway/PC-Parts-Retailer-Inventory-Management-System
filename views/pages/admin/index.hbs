@@ -1,0 +1,50 @@
+{{#extend "main"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "main-content"}}
+
+<div class="container-fluid" id="login">
+    <div class="row">
+        <div class="col-xl-4" style="margin: 0 auto;">
+            <form action="" method="POST" id="loginForm">
+                <h4>Log in</h4>
+                <div class="md-form mb-3">
+                    <input class="form-control m-0" id="email" type="email" name="email" id="email" required>
+                    <label class="d-flex align-items-center" for="email">
+                        <div class="d-flex align-items-center" id="email_indicator"></div>
+                        Email
+                    </label>
+                    <span class="msg err_msg" id="email_indicator_msg"></span>
+                </div>
+                <div class="md-form mb-3">
+                    <input class="form-control m-0" type="password" name="password" id="password" required>
+                    <label class="d-flex align-items-center" for="password">
+                        <div class="d-flex align-items-center" id="password_indicator"></div>
+                        Password
+                    </label>
+                    <span class="msg err_msg" id="password_indicator_msg"></span>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">Log in</button>
+                <div class="links">
+                    <p>
+                        <span>Forgot password? </span>
+                        <a href="#reset">Reset</a>
+                    </p>
+                    <p>
+                        <span>Don't have an account yet? </span>
+                        <a href="/signup">Sign up</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{/content}}
+
+{{#content "extra_js"}}
+{{/content}}
+
+{{/extend}}

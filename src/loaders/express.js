@@ -5,22 +5,28 @@ const handlebars = require('handlebars')
 const exphbs = require('express-handlebars')
 const layouts = require('handlebars-layouts')
 
+// Initialize express
 const app = express()
-exphbs.create({
+
+// Setup
+app.engine('hbs', exphbs({
     layoutsDir: path.join(__dirname, '../../views/layouts'),
-    partialsDir: path.join(__dirname, '../../views/components')
-})
-app.engine('handlebars', exphbs())
-app.set('view engine', 'handlebars')
-app.set('views', path.join(__dirname, '../../views/'))
+    partialsDir: path.join(__dirname, '../../views/partials')
+}))
+app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname, '../../views'))
 app.use(express.static(path.join(__dirname, '../../public')))
 app.use('/mdbootstrap', express.static(path.join(__dirname, '../../node_modules/mdbootstrap')))
 
-// Register helpers
+// Handlebars layouts
 handlebars.registerHelper(layouts(handlebars));
 
-// Register partials
-handlebars.registerPartial('layout', fs.readFileSync(path.join(__dirname, '../../views/layouts/main.handlebars'), 'utf8'));
+// Main layout
+handlebars.registerPartial('main', fs.readFileSync(path.join(__dirname, '../../views/layouts/main.hbs'), 'utf8'));
+// Client layout
+handlebars.registerPartial('layout-client', fs.readFileSync(path.join(__dirname, '../../views/layouts/client/layout.hbs'), 'utf8'));
+// Admin layout
+handlebars.registerPartial('layout-admin', fs.readFileSync(path.join(__dirname, '../../views/layouts/admin/layout.hbs'), 'utf8'));
 
 // Routes
 require('../api/index')(app, handlebars)
